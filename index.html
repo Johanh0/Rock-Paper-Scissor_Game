@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main class="container">
+        <section class="header">
+            <span class="logo"></span>
+            <button class="switch" id="switch">
+                <span><img src="./assets/sun.png" alt=""></span>
+                <span><img src="./assets/moon.png" alt=""></span>
+            </button>
+        </section>
+        <section class="points">
+            <div class="points_style">
+                <p>USER</p>
+                <p id="userPoint">0</p>
+            </div>
+            <div class="points_style">
+                <p>CPU</p>
+                <p id="cpuPoint">0</p>
+            </div>
+        </section>
+        <section class="heroCircle">
+            <p id="iconWin">🤝</p>
+        </section>
+        <section class="content">
+            <div class="messege">
+                <h1 id="result">Choose</h1>
+            </div>
+            <div class="btn">
+                <button class="btnCss" id="rock">✊</button>
+                <button class="btnCss" id="paper">👋</button>
+                <button class="btnCss" id="scissor">✌️</button>
+            </div>
+            <div class="containerDown">
+               <button class="play" id="play">Play</button>
+            <button class="play" id="restart">Restart</button> 
+            </div>
+            
+        </section>
+        <div class="circles" id="c1"></div>
+    <div class="circles" id="c2"></div>
+    </main>
+    <script src="./app.js"></script>
+</body>
+</html>
