@@ -175,11 +175,6 @@ body.dark .messege {
     cursor: pointer;
 }
 
-/* .btnCss:hover {
-    background: #f3f2f2;
-    transition: .8s ease all;
-} */
-
 .btnCss:hover {
     background: #dfdddd;
     transition: .8s ease all;
@@ -237,17 +232,10 @@ body.dark .play:hover {
     /* transition: .8s ease; */
 }
 
-body.press1 #rock {
+body.press {
     background: #dfdddd;
 }
 
-body.press2 #paper {
-    background: #dfdddd;
-}
-
-body.press3 #scissor {
-    background: #dfdddd;
-}
 /* SWITCH */
 
 .switch {
