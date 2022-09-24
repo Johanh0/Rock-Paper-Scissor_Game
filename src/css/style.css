@@ -92,14 +92,14 @@ body.dark .header {
     width: 90px;
     height: 80px;
     margin-left: 50px;
-    background-image: url(./assets/logoBlack.png);
+    background-image: url(../../assets/logoBlack.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
 body.dark .logo {
-    background-image: url(./assets/logoWhite.png);
+    background-image: url(../../assets/logoWhite.png);
     transition: .5s ease all;
 }
 
@@ -175,14 +175,13 @@ body.dark .messege {
     cursor: pointer;
 }
 
-/* .btnCss:hover {
-    background: #f3f2f2;
-    transition: .8s ease all;
-} */
-
 .btnCss:hover {
     background: #dfdddd;
     transition: .8s ease all;
+}
+
+.btnSelected {
+    background: #dfdddd;
 }
 
 body.dark .btnCss {
@@ -237,17 +236,10 @@ body.dark .play:hover {
     /* transition: .8s ease; */
 }
 
-body.press1 #rock {
+body.press {
     background: #dfdddd;
 }
 
-body.press2 #paper {
-    background: #dfdddd;
-}
-
-body.press3 #scissor {
-    background: #dfdddd;
-}
 /* SWITCH */
 
 .switch {
