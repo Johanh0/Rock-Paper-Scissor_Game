@@ -92,14 +92,14 @@ body.dark .header {
     width: 90px;
     height: 80px;
     margin-left: 50px;
-    background-image: url(./assets/logoBlack.png);
+    background-image: url(../../assets/logoBlack.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
 body.dark .logo {
-    background-image: url(./assets/logoWhite.png);
+    background-image: url(../../assets/logoWhite.png);
     transition: .5s ease all;
 }
 
