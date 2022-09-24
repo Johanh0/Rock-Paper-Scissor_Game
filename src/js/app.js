@@ -9,6 +9,11 @@ const scissorBtn = document.querySelector(`#scissor`);
 const playBtn = document.querySelector(`#play`);
 const restartBtn = document.querySelector(`#restart`);
 
+// Text Elements for change
+const userPointEl = document.querySelector(`#userPoint`);
+const cpuPointEl = document.querySelector(`#cpuPoint`);
+const iconWinEl = document.querySelector(`#iconWin`);
+const resultEl = document.querySelector(`#result`);
 
 // Game Properities
 let userPoints = 0;
@@ -46,18 +51,38 @@ playBtn.addEventListener(`click`, () => {
 
 rockBtn.addEventListener(`click`, () => {
     userValue = gameValues[0];
+
+    // Adding class list for the button to know which one was selected
+    rockBtn.classList.add(`btnSelected`);
+    paperBtn.classList.remove(`btnSelected`);
+    scissorBtn.classList.remove(`btnSelected`);
 });
 
 paperBtn.addEventListener(`click`, () => {
     userValue = gameValues[1];
+
+    // Adding class list for the button to know which one was selected
+    paperBtn.classList.add(`btnSelected`);
+    rockBtn.classList.remove(`btnSelected`);
+    scissorBtn.classList.remove(`btnSelected`);
+
 });
 
 scissorBtn.addEventListener(`click`, () => {
     userValue = gameValues[2];
+
+    // Adding class list for the button to know which one was selected
+    scissorBtn.classList.add(`btnSelected`);
+    paperBtn.classList.remove(`btnSelected`);
+    rockBtn.classList.remove(`btnSelected`);
+
 });
 
 //Restart Game
 restartBtn.addEventListener(`click`, () => {
+
+    resultEl.innerText = `Choose`;
+
     userPointsElement.innerHTML = "0"; 
     cpuPointElement.innerHTML = "0";
     userPoint = 0;
@@ -72,13 +97,13 @@ function gameLogic(value) {
     // Switch for to know whitch value the player choosed
     switch( value ) {
         case `rock`:
-            playBtn.addEventListener(`click`, () => gameFunction(value));
+            gameFunction(value);
             break;
         case `paper`:
-            playBtn.addEventListener(`click`, () => gameFunction(value));
+            gameFunction(value);
             break;
         case `scissor`:
-            playBtn.addEventListener(`click`, () => gameFunction(value));
+            gameFunction(value);
             break;
     }
 };
@@ -98,42 +123,139 @@ function gameFunction (value) {
         case `rock`:
 
             if ( value === cpuValue) {
-                alert(`It's a tie`);
+
+                // Showing to the user the result of the CPU
+                alert(`CPU choose: ${cpuValue}`);
+ 
+                // Making appear the result on the text
+                timeForText(`Tie`);
+               
             } else if (cpuValue === `paper`) {
-                alert(`CPU won with Paper`);
+
+                // Showing to the user the result of the CPU
+                alert(`CPU choose: ${cpuValue}`);
+
+                // Making appear the result on the text
+                timeForText(`CPU won`);
+
+                // Giving points to the cpu
+                cpuPoints ++;
+                cpuPointEl.innerText = cpuPoints;
+                
             } else if (cpuValue === `scissor`) {
-                alert(`USER won with rock`)
+                
+                // Showing to the user the result of the CPU
+                alert(`CPU choose: ${cpuValue}`);
+
+                // Making appear the result on the text
+                timeForText(`USER won`);
+
+                // Giving points to the cpu
+                userPoints ++;
+                // userPoints = userPoints.toString();
+                userPointEl.innerText = userPoints;
+                
             }
 
             break;
         case `paper`:
 
             if ( value === cpuValue) {
-                alert(`It's a tie`);
+
+                // Showing to the user the result of the CPU
+                alert(`CPU choose: ${cpuValue}`);
+
+                // Making appear the result on the text
+                timeForText(`Tie`);
+
             } else if (cpuValue === `scissor`) {
-                alert(`CPU won with Scissor`);
+
+                // Showing to the user the result of the CPU
+                alert(`CPU choose: ${cpuValue}`);
+
+                // Making appear the result on the text
+                timeForText(`CPU won`);
+
+                // Giving points to the cpu
+                cpuPoints ++;
+                cpuPointEl.innerText = cpuPoints;
+                
             } else if (cpuValue === `rock`) {
-                alert(`USER won with ${value}`)
+                
+                // Showing to the user the result of the CPU
+                alert(`CPU choose: ${cpuValue}`);
+
+                // Making appear the result on the text
+                timeForText(`USER won`);
+
+                // Giving points to the cpu
+                userPoints ++;
+                // userPoints = userPoints.toString();
+                userPointEl.innerText = userPoints;
+
             }
 
             break;
         case `scissor`:
 
             if ( value === cpuValue) {
-                alert(`It's a tie`);
+
+                // Showing to the user the result of the CPU
+                alert(`CPU choose: ${cpuValue}`);
+ 
+                // Making appear the result on the text
+                timeForText(`Tie`);
+               
             } else if (cpuValue === `rock`) {
-                alert(`CPU won with Rock`);
+
+                // Showing to the user the result of the CPU
+                alert(`CPU choose: ${cpuValue}`);
+
+                // Making appear the result on the text
+                timeForText(`CPU won`);
+
+                // Giving points to the cpu
+                cpuPoints ++;
+                cpuPointEl.innerText = cpuPoints;
+                
             } else if (cpuValue === `paper`) {
-                alert(`USER won with ${value}`)
+                
+                // Showing to the user the result of the CPU
+                alert(`CPU choose: ${cpuValue}`);
+
+                // Making appear the result on the text
+                timeForText(`USER won`);
+
+                // Giving points to the cpu
+                userPoints ++;
+                // userPoints = userPoints.toString();
+                userPointEl.innerText = userPoints;
+                
             }
 
             break;
     }
 
-
     // Check if the logic works from the console
     console.log(`cpu`, cpuValue);
     console.log(value);
+
+    //Restart values
+    userValue = undefined;
+    cpuValue = undefined;
+    paperBtn.classList.remove(`btnSelected`);
+    rockBtn.classList.remove(`btnSelected`);
+    scissorBtn.classList.remove(`btnSelected`);
+}
+
+function timeForText(textResult) {
+    // Tiem Out for the text to let know what happened in the game
+
+    resultEl.innerText = `The result of the match is: ${textResult}`;
+    setTimeout(() => {
+        resultEl.innerText = `Choose`;
+    }, 7000);
+
 }
 
 
