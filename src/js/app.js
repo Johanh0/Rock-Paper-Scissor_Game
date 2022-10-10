@@ -28,10 +28,6 @@ let cpuRandom = () => {
 let userValue;
 let cpuValue;
 
-// Points
-const userPointsElement = document.querySelector(`#userPoint`);
-const cpuPointElement = document.querySelector(`#cpuPoint`);
-
 
 // Game values for the game
 const gameValues = [`rock`, `paper`, `scissor`]
@@ -83,8 +79,8 @@ restartBtn.addEventListener(`click`, () => {
 
     resultEl.innerText = `Choose`;
 
-    userPointsElement.innerHTML = "0"; 
-    cpuPointElement.innerHTML = "0";
+    userPointEl.innerHTML = "0"; 
+    cpuPointEl.innerHTML = "0";
     userPoint = 0;
     cpuPoint = 0;
 });
